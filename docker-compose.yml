@@ -1,0 +1,15 @@
+version: '3'
+services:
+  24rp11363_web:
+    build: .
+    ports:
+      - "8080:80"
+  24rp11363_shareride_db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: 24rp11363_shareride_db
+  24rp11363_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
